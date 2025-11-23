@@ -1,0 +1,22 @@
+
+---
+
+## 📄 monitor.py
+```python
+import random
+import time
+
+THRESHOLD = 0.8  # from 0 to 1
+
+print("Random number monitor started (CTRL + C to stop)")
+
+try:
+    while True:
+        n = round(random.random(), 3)
+        if n > THRESHOLD:
+            print(f"⚠️ High value: {n}")
+        else:
+            print(f"Value: {n}")
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("\nStopped.")
